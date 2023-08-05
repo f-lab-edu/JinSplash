@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import LinkListComponent from './LinkListComponent'
 
 export default function SearchBarComponent() {
 	return (
@@ -10,20 +11,22 @@ export default function SearchBarComponent() {
 				></SearchBarInputBox>
 				<Listbox></Listbox>
 			</SearchBarForm>
+			<LinkListComponent />
 		</SearchBar>
 	)
 }
 
 const SearchBar = styled.div`
-	color: black;
-	align-items: center;
 	display: flex;
-	margin: 0 10px;
+	flex-grow: 1;
+	margin-left: 20px;
+	align-items: center;
+	color: black;
 `
 const SearchBarForm = styled.form`
 	display: flex;
-	width: 35rem;
 	height: 40px;
+	width: 75rem;
 	color: black;
 	background-color: #eee;
 	border: 1px solid #0000;
@@ -31,6 +34,7 @@ const SearchBarForm = styled.form`
 `
 
 const SearchBarInputBox = styled.input`
+	width: 100%;
 	background: none;
 	border: none;
 	color: #111;
