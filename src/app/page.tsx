@@ -1,5 +1,13 @@
 'use client'
 
+import CategoryComponent from '@/components/CategoryComponent'
+import HeaderComponent from '@/components/HeaderComponent'
+
 export default function Home() {
-	return <div>hihi 이건 page에서 작성한 글이야</div>
+	return (
+		<>
+			<HeaderComponent />
+			<CategoryComponent />
+		</>
+	)
 }
