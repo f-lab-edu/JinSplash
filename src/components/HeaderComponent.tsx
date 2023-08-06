@@ -3,7 +3,7 @@ import LogoComponent from './LogoComponent'
 import SearchBarComponent from './SearchBarComponent'
 import LinkListComponent from './LinkListComponent'
 import SubmitComponent from './SubmitComponent'
-import HambergerComponent from './HambergerComponent'
+import HamburgerComponent from './HamburgerComponent'
 
 export default function HeaderComponent() {
 	return (
@@ -11,9 +11,8 @@ export default function HeaderComponent() {
 			<Nav>
 				<LogoComponent />
 				<SearchBarComponent />
-				<LinkListComponent />
 				<SubmitComponent />
-				<HambergerComponent />
+				<HamburgerComponent />
 			</Nav>
 		</Header>
 	)
@@ -26,7 +25,9 @@ const Header = styled.header`
 	border: 1px solid black;
 `
 const Nav = styled.nav`
-	height: 62px;
-	padding-block: 11px;
 	display: flex;
+	justify-content: center;
+	height: 62px;
+	padding: 0 20px;
+	padding-block: 11px;
 `
