@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
 import React from 'react'
-import Link from 'next/link'
 
 export default function CategoryComponent() {
 	return (
@@ -82,4 +81,11 @@ const StyledLink = styled.a`
 	display: flex;
 	align-items: center;
 	height: 56px;
+	color: #767676;
+	transition:
+		color 0.1s ease-in-out,
+		opacity 0.1s ease-in-out;
+	&:hover {
+		color: #111;
+	}
 `

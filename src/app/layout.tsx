@@ -66,4 +66,10 @@ ol, ul {
 	list-style: none;
 }
 
+body {
+	color: #111;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.6;
+}
 `
