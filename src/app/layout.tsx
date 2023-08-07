@@ -1,5 +1,4 @@
 'use client'
-import HeaderComponent from '@/components/HeaderComponent'
 import { createGlobalStyle } from 'styled-components'
 
 export default function RootLayout({
@@ -11,7 +10,6 @@ export default function RootLayout({
 		<html lang="ko">
 			<body>
 				<GlobalStyles />
-				<HeaderComponent />
 				{children}
 			</body>
 		</html>
