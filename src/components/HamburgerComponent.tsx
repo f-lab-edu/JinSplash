@@ -21,7 +21,7 @@ const Hamburger = styled.div`
 `
 
 const HamburgerIcon = styled.button`
-	heigth: 100%;
+	height: 100%;
 	color: #767676;
 	line-height: 1;
 	padding-left: 4px;
