@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
 
 export default function MainComponent() {
+	const [testUrl, setTestUrl] = useState('')
+	const [testHref, setHref] = useState('')
+
+	const fetchRequest = async () => {
+		const response = await fetch(
+			`https://api.unsplash.com/photos/random/?client_id=${process.env.NEXT_PUBLIC_UNSPLASH_API_KEY}`,
+		)
+		const responseJson = await response.json()
+		setHref(responseJson.urls.regular)
+		setTestUrl(responseJson.urls.small)
+		console.log(responseJson)
+	}
+
+	console.log(testUrl)
+	useEffect(() => {
+		fetchRequest()
+	}, [])
+
 	return (
 		<JinspalshImgContainer>
 			<JinsplashImgWrapper>
 				<JinspalshImgBox>
 					<GridBox>
 						<GridItems>
-							<GirdItemStyleLink>
+							<GirdItemStyleLink href={testHref}>
 								<GridItemImg>
-									<ImgStyled src="/img/testImg.jpeg"></ImgStyled>
+									<ImgStyled src={testUrl}></ImgStyled>
 								</GridItemImg>
 							</GirdItemStyleLink>
 						</GridItems>
