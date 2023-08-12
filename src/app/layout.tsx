@@ -1,5 +1,6 @@
 'use client'
 import { createGlobalStyle } from 'styled-components'
+import StyledComponentsRegistry from './registry'
 
 export default function RootLayout({
 	children,
@@ -9,8 +10,10 @@ export default function RootLayout({
 	return (
 		<html lang="ko">
 			<body>
-				<GlobalStyles />
-				{children}
+				<StyledComponentsRegistry>
+					<GlobalStyles />
+					{children}
+				</StyledComponentsRegistry>
 			</body>
 		</html>
 	)
