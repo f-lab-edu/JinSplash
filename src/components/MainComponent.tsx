@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
+import GridImgComponent from './GridImgComponent'
 
 export default function MainComponent() {
 	const [testUrl, setTestUrl] = useState('')
 	const [testHref, setHref] = useState('')
+	const [responseData, setResponseData] = useState(null)
 
 	const fetchRequest = async () => {
 		const response = await fetch(
 			`https://api.unsplash.com/photos/random/?client_id=${process.env.NEXT_PUBLIC_UNSPLASH_API_KEY}`,
 		)
 		const responseJson = await response.json()
+		setResponseData(responseJson)
 		setHref(responseJson.urls.regular)
 		setTestUrl(responseJson.urls.small)
-		console.log(responseJson)
 	}
-
-	console.log(testUrl)
 	useEffect(() => {
 		fetchRequest()
 	}, [])
+	console.log(responseData)
 
 	return (
 		<JinspalshImgContainer>
@@ -26,25 +27,13 @@ export default function MainComponent() {
 				<JinspalshImgBox>
 					<GridBox>
 						<GridItems>
-							<GirdItemStyleLink href={testHref}>
-								<GridItemImg>
-									<ImgStyled src={testUrl}></ImgStyled>
-								</GridItemImg>
-							</GirdItemStyleLink>
+							{responseData && <GridImgComponent data={responseData} />}
 						</GridItems>
 						<GridItems>
-							<GirdItemStyleLink>
-								<GridItemImg>
-									<ImgStyled src="/img/testImg.jpeg"></ImgStyled>
-								</GridItemImg>
-							</GirdItemStyleLink>
+							{responseData && <GridImgComponent data={responseData} />}
 						</GridItems>
 						<GridItems>
-							<GirdItemStyleLink>
-								<GridItemImg>
-									<ImgStyled src="/img/testImg.jpeg"></ImgStyled>
-								</GridItemImg>
-							</GirdItemStyleLink>
+							{responseData && <GridImgComponent data={responseData} />}
 						</GridItems>
 					</GridBox>
 				</JinspalshImgBox>
@@ -70,19 +59,4 @@ const GridBox = styled.div`
 
 const GridItems = styled.div`
 	position: relative;
-`
-
-const GirdItemStyleLink = styled.a`
-	cursor: zoom-in;
-`
-const GridItemImg = styled.div`
-	display: block;
-	height: 100%;
-	position: relative;
-`
-const ImgStyled = styled.img`
-	width: 100%;
-	vertical-align: middle;
-	border-style: none;
-	overflow: clip;
 `
