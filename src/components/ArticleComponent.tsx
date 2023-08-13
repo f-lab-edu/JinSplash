@@ -98,11 +98,11 @@ const DescSubTitle = styled.div``
 const SubTitle = styled.h1`
 	margin-bottom: 0;
 	margin-top: 16px;
-	font-weigth: 400;
+	font-weight: 400;
 	font-size: 18px;
 `
 const SubTitleDesc = styled.p`
-	font-weigth: 400;
+	font-weight: 400;
 	font-size: 18px;
 	margin-bottom: 16px;
 `
