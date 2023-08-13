@@ -1,31 +1,19 @@
+import React from 'react'
 import { styled } from 'styled-components'
-import LinkListComponent from './LinkListComponent'
 
 export default function SearchBarComponent() {
 	return (
-		<SearchBar>
-			<SearchBarForm method="get" aria-label="사이트 전체에서 이미지 찾기">
-				<SearchBarInputBox
-					type="text"
-					placeholder="고해상도 이미지 검색"
-				></SearchBarInputBox>
-				<Listbox></Listbox>
-			</SearchBarForm>
-			<LinkListComponent />
-		</SearchBar>
+		<SearchBarForm method="get" aria-label="사이트 전체에서 이미지 찾기">
+			<SearchBarInputBox
+				type="text"
+				placeholder="고해상도 이미지 검색"
+			></SearchBarInputBox>
+		</SearchBarForm>
 	)
 }
 
-const SearchBar = styled.div`
-	display: flex;
-	flex-grow: 1;
-	margin-left: 20px;
-	justify-content: space-between;
-	align-items: center;
-	color: black;
-`
 const SearchBarForm = styled.form`
-	width: 100%; // Default width
+	width: 100%;
 	display: flex;
 	flex-grow: 1;
 	height: 40px;
@@ -49,6 +37,5 @@ const SearchBarInputBox = styled.input`
 	border: none;
 	color: #111;
 	line-height: inherit;
+	z-index: 9999;
 `
-
-const Listbox = styled.div``

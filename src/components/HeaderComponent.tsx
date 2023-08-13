@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import LogoComponent from './LogoComponent'
-import SearchBarComponent from './SearchBarComponent'
+import SearchBarComponent from './SearchComponent'
 import SubmitComponent from './SubmitComponent'
 import HamburgerComponent from './HamburgerComponent'
 
