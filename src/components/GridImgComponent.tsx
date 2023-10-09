@@ -23,7 +23,6 @@ interface UrlsType {
 }
 
 export default function GridImgComponent({ data }: { data: GirdImgProps }) {
-	console.log(data)
 	return (
 		<GirdItemStyleLink href={data.urls.regular}>
 			<GridItemImg>

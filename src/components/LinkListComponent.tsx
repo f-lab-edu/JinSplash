@@ -17,6 +17,10 @@ const LinkListBox = styled.div`
 	margin-left: 2rem;
 	align-items: center;
 	border-right: 1px solid black;
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
 `
 
 const LinkLists = styled.ul`
